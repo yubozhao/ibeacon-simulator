@@ -1,0 +1,65 @@
+<head>
+  <title>My App</title>
+</head>
+
+<body>
+{{> Controls}}
+</body>
+
+<template name="Controls">
+  <div>
+    <h2>Controls for simulation</h2>
+    <a class="btn btn-primary start">Start Simulation</a>&nbsp;
+    <a class="btn btn-danger clean">Clean log and firebase</a>
+  </div>
+
+  <div>
+    <h2>Logs</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>
+            event
+          </td>
+          <td>
+            Customer UUID
+          </td>
+          <td>
+            iBeacon type
+          </td>
+          <td>
+            iBeacon major
+          </td>
+          <td>
+            iBeacon minor 
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each logs}}
+        <tr>
+          <td>
+            {{type}}
+          </td>
+          <td>
+            {{customer_uuid}}
+          </td>
+          <td>
+            {{ibeacon.roles}}
+          </td>
+          <td>
+            {{ibeacon.major}}
+          </td>
+          <td>
+            {{ibeacon.minor}}
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          No Logs
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
