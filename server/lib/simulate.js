@@ -25,7 +25,7 @@ Simulate.trackEvent = function (customerId, ibeaconId, duration, startTime) {
     major: ibeacon.major,
     uuid: ibeacon.uuid,
     visitor_uuid: customer.uuid,
-    created_at: new Date
+    created_at: (new Date).toString()
   };
 
   startTime = startTime || 0;
